@@ -1,0 +1,12 @@
+import 'package:instax/domain/entities/call_entity.dart';
+
+abstract class CallRepository {
+  Future<void> makeCall(CallEntity call);
+  Future<void> endCall(CallEntity call);
+  Future<void> updateCallHistoryStatus(CallEntity call);
+
+  Future<void> saveCallHistory(CallEntity call);
+  Stream<List<CallEntity>> getUserCalling(String uid);
+  Stream<List<CallEntity>> getMyCallHistory(String uid);
+  Future<String> getCallChannelId(String uid);
+}
